@@ -10,6 +10,10 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--   версия Aspectj   -->
+        <aspectj.version>1.9.7</aspectj.version>
+        <!--   версия Allure   -->
+        <allure.version>2.15.0</allure.version>						 							   
     </properties>
     <dependencies>
         <dependency>
@@ -74,12 +78,14 @@
                     </properties>
                     <systemProperties>
                         <property>
+                            <!--   папка, в которую будут генерироваться отчёты Allure   -->																																  
                             <name>allure.results.directory</name>
                             <value>${project.build.directory}/allure-results</value>
                         </property>
                     </systemProperties>
                 </configuration>
             </plugin>
+            <!--   подключение плагина allure-maven для вызова функций Allure с помощью Maven   -->																																			 
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
